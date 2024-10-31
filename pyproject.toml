@@ -1,0 +1,34 @@
+[project]
+dependencies = [
+    'requirements-parser',
+    'pyyaml',
+]
+name = 'flatpak_pip_generator'
+version = '24.0.0'
+description = 'this is an unofficial pypi distribution of the flatpak_pip_generator script'
+readme = 'readme.md'
+classifiers = [
+    'License :: OSI Approved :: MIT License',
+]
+
+[project.urls]
+upstream = 'https://github.com/flatpak/flatpak-builder-tools/tree/master/pip'
+downstream = 'https://github.com/gmanka-flatpaks/flatpak_pip_generator'
+
+[project.optional-dependencies]
+build = [
+    'setuptools',
+    'twine',
+    'build',
+]
+
+[project.scripts]
+flatpak_pip_generator = 'flatpak_pip_generator.__main__:main'
+
+[tool.pyright]
+venvPath = '.'
+venv = '.venv'
+
+[tool.setuptools.packages.find]
+where = ['.']
+
