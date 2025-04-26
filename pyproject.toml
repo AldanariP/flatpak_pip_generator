@@ -4,7 +4,7 @@ dependencies = [
     'pyyaml',
 ]
 name = 'flatpak_pip_generator'
-version = '24.0.0'
+version = '25.0.0'
 description = 'this is an unofficial pypi distribution of the flatpak_pip_generator script'
 readme = 'readme.md'
 classifiers = [
