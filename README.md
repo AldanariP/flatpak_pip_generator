@@ -1,13 +1,11 @@
 # Flatpak PIP Generator
 
-this is an unofficial pypi distribution of the flatpak_pip_generator script
+This is an unofficial pypi distribution of the flatpak_pip_generator script
 
 upstream - https://github.com/flatpak/flatpak-builder-tools/tree/master/pip
 
 Tool to automatically generate `flatpak-builder` manifest json from a `pip`
 package-name.
-
-This requires `requirements-parser` which can be installed on your host with `pip3 install --user requirements-parser`.
 
 ## Usage
 
@@ -84,6 +82,5 @@ options:
 ## Development
 
 1. Install uv https://docs.astral.sh/uv/getting-started/installation/
-2. `uv sync -v --all-groups --frozen`
-3. Format and lint: `uv run ruff format && uv run ruff check --fix --exit-non-zero-on-fix`
-4. Type check: `uv run mypy .`
+2. `uv sync` to get the dependecies
+3. `uv build` to build the project
