@@ -1,36 +1,25 @@
 [project]
+name = "flatpak_pip_generator"
+version = "26.3.11"
+description = "this is an unofficial pypi distribution of the flatpak_pip_generator script"
+license = "MIT"
+readme = "README.md"
 requires-python="<4.0,>=3.10"
 dependencies = [
-    'requirements-parser<1.0.0,>=0.11.0',
-    'packaging>=23.0',
-    'pyyaml',
-]
-name = 'flatpak_pip_generator'
-version = '26.0.0'
-description = 'this is an unofficial pypi distribution of the flatpak_pip_generator script'
-readme = 'readme.md'
-classifiers = [
-    'License :: OSI Approved :: MIT License',
+    "requirements-parser<1.0.0,>=0.11.0",
+    "pyyaml",
 ]
 
 [project.urls]
-upstream = 'https://github.com/flatpak/flatpak-builder-tools/tree/master/pip'
-downstream = 'https://github.com/gmanka-flatpaks/flatpak_pip_generator'
-
-[project.optional-dependencies]
-build = [
-    'setuptools',
-    'twine',
-    'build',
-]
+upstream = "https://github.com/flatpak/flatpak-builder-tools/tree/master/pip"
+downstream = "https://github.com/gmanka-flatpaks/flatpak_pip_generator"
 
 [project.scripts]
-flatpak_pip_generator = 'flatpak_pip_generator.__main__:main'
+flatpak_pip_generator = "flatpak_pip_generator.__main__:main"
 
-[tool.pyright]
-venvPath = '.'
-venv = '.venv'
+[build-system]
+requires = ["uv_build==0.10.9"]
+build-backend = "uv_build"
 
-[tool.setuptools.packages.find]
-where = ['.']
-
+[tool.uv.build-backend]
+module-root = ""
