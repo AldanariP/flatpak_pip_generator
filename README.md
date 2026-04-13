@@ -7,8 +7,6 @@ upstream - https://github.com/flatpak/flatpak-builder-tools/tree/master/pip
 Tool to automatically generate `flatpak-builder` manifest json from a `pip`
 package-name.
 
-This requires `requirements-parser` which can be installed on your host with `pip3 install --user requirements-parser`.
-
 ## Usage
 
 `flatpak-pip-generator --runtime='org.freedesktop.Sdk//22.08' foo` which generates `python3-foo.json` and can be included in a manifest like:
@@ -47,18 +45,17 @@ You can use that in your manifest like
 By default, this tool selects artifacts from PyPI using the following
 priority: universal wheels (`none-any.whl`) > sdists.
 
-If neither is available for a module, the an error is raised.
-Platform-specific wheels are ignored unless explicitly enabled via
+If neither is available for a module, an error is raised. Platform
+specific wheels are ignored unless explicitly enabled via
 `--prefer-wheels=module1,module2,...`.
 
 When `--prefer-wheels` is used, a Flatpak runtime must be provided with
 the `--runtime` argument. The runtime must include `Python`, `pip`, and
-`python-packaging` module. This is used to determine platform tags
+the `python-packaging` module. This is used to determine platform tags
 (Python version, ABI, and architecture).
 
-By default, platform wheels are considered for the following
-`x86_64` and `aarch64`. This can be overridden with
-`--wheel-arches arch1 arch2 ...`.
+By default, platform wheels are considered for the `x86_64` and
+`aarch64`. This can be overridden with `--wheel-arches arch1,arch2,...`.
 
 If the specified runtime is only available for a single architecture,
 platform tags for other architectures are inferred from it.
@@ -125,6 +122,5 @@ options:
 ## Development
 
 1. Install uv https://docs.astral.sh/uv/getting-started/installation/
-2. `uv sync -v --all-groups --frozen`
-3. Format and lint: `uv run ruff format && uv run ruff check --fix --exit-non-zero-on-fix`
-4. Type check: `uv run mypy .`
+2. `uv sync`
+3. `uv build`
