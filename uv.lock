@@ -4,7 +4,7 @@ requires-python = ">=3.10, <4.0"
 
 [[package]]
 name = "flatpak-pip-generator"
-version = "26.3.11"
+version = "26.4.13"
 source = { editable = "." }
 dependencies = [
     { name = "pyyaml" },
