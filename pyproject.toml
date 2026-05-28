@@ -1,6 +1,6 @@
 [project]
 name = "flatpak_pip_generator"
-version = "2026.04.13"
+version = "2026.05.28"
 description = "this is an unofficial pypi distribution of the flatpak_pip_generator script"
 license = "MIT"
 readme = "README.md"
