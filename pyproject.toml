@@ -1,10 +1,10 @@
 [project]
 name = "flatpak_pip_generator"
-version = "26.4.13"
+version = "2026.04.13"
 description = "this is an unofficial pypi distribution of the flatpak_pip_generator script"
 license = "MIT"
 readme = "README.md"
-requires-python="<4.0,>=3.10"
+requires-python = "<4.0,>=3.11"
 dependencies = [
     "requirements-parser<1.0.0,>=0.11.0",
     "pyyaml",
@@ -18,8 +18,20 @@ downstream = "https://github.com/gmanka-flatpaks/flatpak_pip_generator"
 flatpak_pip_generator = "flatpak_pip_generator.__main__:main"
 
 [build-system]
-requires = ["uv_build==0.10.9"]
+requires = [
+    "uv_build==0.10.9",
+]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
+
+[dependency-groups]
+dev = [
+    "gitpython>=3.1.50",
+    "requests>=2.33.1",
+    "ruff>=0.15.12",
+    "tomli-w>=1.2.0",
+    "ty>=0.0.35",
+    "python-dotenv>=1.2.2",
+]
